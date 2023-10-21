@@ -4,7 +4,7 @@ require("dotenv").config();
 const cors = require('cors')
 const mongoose =require('mongoose')
 const PORT =3000 ;
-const url = process.env.API 
+const url = "mongodb+srv://connectitdept:x2FnvrxDpPLhLaUe@cluster0.zpkisx0.mongodb.net/?retryWrites=true&w=majority "
 const fileUpload = require('express-fileupload');
 const admin = require("./routes/Admin");
 const student=require('./routes/Student')

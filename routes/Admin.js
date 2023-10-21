@@ -13,7 +13,7 @@ const notesModel = require("../Models/Notes");
 const qPModel = require("../Models/QuestionPaper");
 const noticeModel = require("../Models/Notice");
 const achievementModel =require("../Models/Achievements")
-const api_secret_key = process.env.Cld_Api_key;
+const api_secret_key = "-q7wUtOWJhXgvVF-rSB39Kr2DQE";
 cloudinary.config({
   cloud_name: "dc28atbon",
   api_key: "382378611656777",
