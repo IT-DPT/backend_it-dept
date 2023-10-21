@@ -12,13 +12,23 @@ const auth =require('./routes/Auth')
 const faculty=require('./routes/Faculty')
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // Replace with your allowed origin
-  methods: 'GET,PUT,POST,DELETE',
+  origin: 'http://localhost:5173', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
 
-app.use(cors(corsOptions));
+// Use your custom CORS middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', corsOptions.origin);
+  res.header('Access-Control-Allow-Methods', corsOptions.methods);
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(corsOptions.optionsSuccessStatus);
+  } else {
+    next();
+  }
+});
 
 // app.use(cors({
 //   origin: "*",
