@@ -13,9 +13,9 @@ const faculty=require('./routes/Faculty')
 
 const corsOptions = {
   origin: 'http://localhost:5173', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  methods: ["GET","PUT","POST","DELETE"],
   preflightContinue: false,
-  optionsSuccessStatus: 204,
+  optionsSuccessStatus: 200,
 };
 
 // Use your custom CORS middleware
