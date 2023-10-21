@@ -10,21 +10,25 @@ const admin = require("./routes/Admin");
 const student=require('./routes/Student')
 const auth =require('./routes/Auth')
 const faculty=require('./routes/Faculty')
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+
+const corsOptions = {
+  origin: 'http://localhost:5173', // Replace with your allowed origin
+  methods: 'GET,PUT,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 // app.use(cors({
 //   origin: "*",
 // }));
 
-app.use((req, res, next) => {
-  req.header("Access-Control-Allow-Origin", "*");
-  req.header("Access-Control-Allow-Headers", "*");
-  next();
-});
+// app.use((req, res, next) => {
+//   req.header("Access-Control-Allow-Origin", "*");
+//   req.header("Access-Control-Allow-Headers", "*");
+//   next();
+// });
 
 app.use(express.json());
 app.use(fileUpload({
