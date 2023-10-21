@@ -4,7 +4,7 @@ const adminModel=require('../Models/AdminModel')
 const facultyModel=require('../Models/FacultyModel')
 const express =require('express')
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("express");
 
 
 router.post('/student-login',async (req, res) => {
