@@ -30,15 +30,15 @@ app.use((req, res, next) => {
   }
 });
 
-// app.use(cors({
-//   origin: "*",
-// }));
+app.use(cors({
+  origin: "*",
+}));
 
-// app.use((req, res, next) => {
-//   req.header("Access-Control-Allow-Origin", "*");
-//   req.header("Access-Control-Allow-Headers", "*");
-//   next();
-// });
+app.use((req, res, next) => {
+  req.header("Access-Control-Allow-Origin", "*");
+  req.header("Access-Control-Allow-Headers", "*");
+  next();
+});
 
 app.use(express.json());
 app.use(fileUpload({
