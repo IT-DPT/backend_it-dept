@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("express");
 const cloudinary = require("cloudinary").v2;
 const adminModel=require('../Models/AdminModel')
 const studentModel = require("../Models/Student");
